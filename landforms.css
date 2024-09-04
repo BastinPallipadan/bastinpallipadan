@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.images-container {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    min-width: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.images-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout for Fold Mountains and Volcanic Plateau - Diagonal Layout */
+.layout-diagonal .content-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.layout-diagonal .text-content {
+    flex: 1;
+    order: 1;
+}
+
+.layout-diagonal .images-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+.layout-diagonal .images-container img:nth-child(odd) {
+    align-self: flex-start;
+}
+
+.layout-diagonal .images-container img:nth-child(even) {
+    align-self: flex-end;
+}
+
+/* Intermont Plateau - Images on the Left */
+.layout-left-images .content-container {
+    flex-direction: row;
+}
+
+.layout-left-images .images-container {
+    order: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.layout-left-images .text-content {
+    order: 2;
+    flex: 2;
+}
+
+/* Block Mountains - XX OO Layout */
+.layout-xx-oo .content-container {
+    flex-direction: row;
+}
+
+.layout-xx-oo .images-container {
+    order: 1;
+}
+
+.layout-xx-oo .text-content {
+    order: 2;
+}
+
+/* Alluvial Plains - XO XO Layout */
+.layout-xo-xo .content-container {
+    flex-direction: column;
+}
+
+.layout-xo-xo .images-container {
+    flex-direction: row;
+}
+
+.layout-xo-xo .text-content {
+    order: 2;
+}
+
+.layout-xo-xo .images-container img:nth-child(odd) {
+    order: 1;
+}
+
+.layout-xo-xo .images-container img:nth-child(even) {
+    order: 2;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Add this CSS at the end of the existing styles */
+
+/* Fold Mountains - Text on Top, Images Side by Side Below */
+.layout-text-top-images-side-by-side .content-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.layout-text-top-images-side-by-side .text-content {
+    order: 1; /* Text comes first */
+}
+
+.layout-text-top-images-side-by-side .images-container {
+    order: 2; /* Images come second */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; /* Keep images in a single row */
+    gap: 20px; /* Add spacing between images */
+}
+
+/* Specific styling for the Fold Mountains diagram image */
+.layout-text-top-images-side-by-side .images-container img:first-child {
+    width: 150px; /* Adjust the width to make the diagram smaller */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Keep the border radius */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
